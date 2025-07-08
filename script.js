@@ -1,13 +1,16 @@
-// Accessed HTML Elements
+// ------------- Accessed HTML Elements -------------
 // Grid container
 const container = document.querySelector(".grid-container");
 // New Grid Button
 const newGridBtn = document.querySelector("#newGridBtn");
+// Rainbow button
+const rainbowBtn = document.querySelector("#rainbowBtn");
 
 // Variables
 let gridSize = 16;
+let isRainbow = false;
 
-// Functions
+// ------------------- Functions ----------------------
 function generateGrid() {
     container.innerHTML = "";
 
@@ -31,19 +34,35 @@ function generateRBG() {
     return `rgb(${r}, ${g}, ${b})`;
     
 }
-// Program - Event Listeners
-
-// Fill squares
-container.addEventListener("mouseout", (event) => {
-    event.target.style.backgroundColor = generateRBG();
-    event.target.classList.add("filled");
-});
-
+// ------------- Program - Event Listeners -------------
 // On page load
 document.addEventListener("DOMContentLoaded", () => {
     generateGrid();
 })
 
+// Fill squares---------------
+//Default 
+container.addEventListener("mouseout", (event) => {
+        event.target.style.backgroundColor = "green";
+        event.target.classList.add("filled");
+    });
+// Rainbow Toggle
+rainbowBtn.addEventListener("click", () => {
+    if (isRainbow === true) {
+        isRainbow = false;
+        container.addEventListener("mouseout", (event) => {
+        event.target.style.backgroundColor = "green";
+        event.target.classList.add("filled");
+    });
+    }
+    else if (isRainbow === false) {
+        isRainbow = true;
+        container.addEventListener("mouseout", (event) => {
+    event.target.style.backgroundColor = generateRBG();
+    event.target.classList.add("filled");
+    });
+    }
+})
 // New grid button functionality
 newGridBtn.addEventListener("click", () => {
     let response = prompt("How many squares per side for the new grid? (100 max)");
