@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+}
+/* Grid */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+/* Cell */
+.cell {
+    /* width: calc(100% /16); */
+    /* height: calc(100% / 16); */
+    text-align: center;
+    height: auto;
+    border: 2px solid lightgreen;
+}
+.cell:hover {
+    background-color: rgba(44, 222, 44, 0.5);
+}
+/* Button */
+.btn-container {
+    width: 500px;
+    background-color: green;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: 2px solid lightgreen;
+}
+#newGridBtn {
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+    color: green;
+    font-weight: bold;
+    border: 2px solid lightgreen;
+}
