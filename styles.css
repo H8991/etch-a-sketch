@@ -24,13 +24,26 @@ body {
 .cell:hover {
     background-color: rgba(44, 222, 44, 0.5);
 }
+.filled {
+    background-color: green;
+}
 /* Button */
 .btn-container {
     width: 500px;
+    max-height: 100px;
     background-color: green;
     margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: 2px solid lightgreen;
+}
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+    color: green;
+    font-weight: bold;
     border: 2px solid lightgreen;
 }
 #newGridBtn {
@@ -40,4 +53,10 @@ body {
     color: green;
     font-weight: bold;
     border: 2px solid lightgreen;
+}
+#rainbowBtn {
+    font-size: 12px;
+    height: 30px;
+    padding: 2px;
+
 }
